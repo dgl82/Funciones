@@ -41,3 +41,24 @@ document.addEventListener("keydown", function (event) {
     divKey.style.backgroundColor = colorTecla;
   }
 });
+
+// CREAR DIV DE COLOR SEGUN TECLAS
+
+document.addEventListener("keydown", function (event) {
+  if (event.key === "q" || event.key === "Q") {
+    crearDiv("purple");
+  } else if (event.key === "w" || event.key === "W") {
+    crearDiv("grey");
+  } else if (event.key === "e" || event.key === "E") {
+    crearDiv("brown");
+  }
+});
+
+function crearDiv(color) {
+  contenedor = document.querySelector("body");
+  nuevoDiv = document.createElement("div");
+  nuevoDiv.style.backgroundColor = color;
+  nuevoDiv.style.height = "200px";
+  nuevoDiv.style.width = "200px";
+  contenedor.appendChild(nuevoDiv);
+}
